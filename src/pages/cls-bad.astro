@@ -76,8 +76,11 @@
           if(i === 4) {
             clearInterval((thing));
             const results = document.createElement("p");
-            results.innerText = "add results here when I have the text to write which is effort right now";
+            results.innerText = `On a "navigation" Lighthouse test, this page scores 0.143 for CLS, bringing the overall Lighthouse performance score down to 95.`;
             main.appendChild(results);
+            const link = document.createElement("a");
+            link.innerHTML = `<a href="">TODO: add link | Read the full article</a>`;
+            main.appendChild(link);
           }
         }, 500);
       </script>

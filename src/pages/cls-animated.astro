@@ -1,10 +1,15 @@
+---
+import Header from "../components/Header.astro";
+---
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>This CSS animation causes no CLS</title>
-    <meta name="description" content="How to use CSS animations to hide CLS" />
+    <meta name="description" content="You can use sensible animations to guide the user experience of what is happening on a page. Using CSS transform won't cause CLS." />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚨</text></svg>">
 
     <style is:global>
@@ -50,10 +55,12 @@
       main a {
         color: inherit;
         text-decoration: underline;
+        font-size: 2rem;
       }
     </style>
   </head>
   <body>
+    <Header color="white" />
     <main>
         <h1>this is fun</h1>
         <h2>a little pop here</h2>

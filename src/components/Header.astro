@@ -1,0 +1,23 @@
+---
+const {color} = Astro.props;
+
+console.log(color)
+
+---
+
+<style define:vars={{ color: color }}>
+  header {
+    text-align: center;
+    padding-top: 1rem;
+  }
+  
+  header a {
+    font-size: 2rem;
+    color: var(--color);
+  }
+</style>
+
+
+<header>
+  <a href="/" data-allow>Back to list</a>
+</header>

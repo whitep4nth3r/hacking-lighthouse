@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>How to Hack Lighthouse Scores</title>
-    <meta name="description" content="TODO" />
+    <title>How to Hack your Google Lighthouse Scores in 2024</title>
+    <meta name="description" content="Here's how to do some silly things, even though you probably shouldn't." />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚨</text></svg>">
     <style>
       html {
@@ -21,42 +21,47 @@
         position: relative;
         display: grid;
         place-content: center;
-        min-height: 100vh;
-        width: 100vw;
-        max-width: 768px;
+        max-width: 1280px;
         margin: auto;
       }
 
       h1 {
-        font-size: 3rem;
+        font-size: clamp(3rem,7vw, 7rem);
+        text-wrap: balance;
       }
 
       h2 {
         margin-top: 0;
       }
 
+      p {
+        font-size: 2rem;
+        line-height: 1.5;
+      }
+
+      li {
+        font-size: 2rem;
+        line-height: 1.5;
+      }
+
       a {
         color: white;
         margin-bottom: 1rem;
-        line-height: 1.5;
       }
     </style>
   </head>
   <body>
     <main>
-      <h1>PUT TITLE OF BLOG POST HERE</h1>
+      <h1>How to Hack your Google Lighthouse scores in 2024</h1>
       <h2>Salma Alam-Naylor</h2>
-      <p>intro text here</p>
+      <p>I put on my lab coat and science goggles to investigate.</p>
       <a href="">LINK TO BLOG POST</a>
       <ol>
-        <!-- <li><a href="/si">Hack Speed Index (SI) score</a></li> -->
-        <!-- <li><a href="/fcp">Hack First Contentful Paint (FCP) score</a></li> -->
-        <li><a href="/lcp">Hack Largest Contentful Paint (LCP) score</a></li>
+        <li><a href="/lcp">Hack FCP and LCP</a></li>
         <li><a href="/cls-bad">Non-green CLS score on page load</a></li>
         <li><a href="/cls-hacked">Hack CLS score by deferring activity</a></li>
         <li><a href="/cls-animated">This CSS animation causes no CLS</a></li>
         <li><a href="/unusable">Lighthouse can't detect everything</a></li>
-        <!-- <li><a href="/tbt">Hack Total Blocking Time score</a></li> -->
       </ol>
     </main>
   </body>

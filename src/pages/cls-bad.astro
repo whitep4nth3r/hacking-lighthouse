@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hack CLS score</title>
-    <meta name="description" content="How to hack your Google Lighthouse CLS score" />
+    <title>Non-good CLS score</title>
+    <meta name="description" content="Demo of a page that causes CLS on page load" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚨</text></svg>">
 
     <style is:global>
@@ -56,7 +56,6 @@
     </main>
     <footer>
       <script is:inline>
-        const HTML = `<h2>something random</h2>`;
         const main = document.querySelector("main")
 
         const thingsToAdd = [
@@ -67,24 +66,20 @@
           "everywhere a shift shift",
         ]
 
-        setTimeout(() => {
-          let i = -1;
-          const thing = setInterval(() => {
-            i++;
-            const h2 = document.createElement("h2");
-            h2.innerText = thingsToAdd[i];
-            main.appendChild(h2);
+        let i = -1;
+        const thing = setInterval(() => {
+          i++;
+          const h2 = document.createElement("h2");
+          h2.innerText = thingsToAdd[i];
+          main.appendChild(h2);
 
-            if(i === 4) {
-              clearInterval((thing));
-              const results = document.createElement("p");
-              results.innerText = "add results here when I have the text to write which is effort right now";
-              main.appendChild(results);
-            }
-          }, 500);
-        }, 5000);
-
-
+          if(i === 4) {
+            clearInterval((thing));
+            const results = document.createElement("p");
+            results.innerText = "add results here when I have the text to write which is effort right now";
+            main.appendChild(results);
+          }
+        }, 500);
       </script>
     </footer>
   </body>

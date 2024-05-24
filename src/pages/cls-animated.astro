@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Non-green CLS score</title>
-    <meta name="description" content="Demo of a page that causes CLS on page load" />
+    <title>This CSS animation causes no CLS</title>
+    <meta name="description" content="How to use CSS animations to hide CLS" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚨</text></svg>">
 
     <style is:global>
@@ -14,7 +14,7 @@
       }
       
       body {
-        background-color: darkred;
+        background-color:black;
         color: white;
       }
 
@@ -28,10 +28,13 @@
         margin: auto;
       }
 
+
       main h2 {
         font-size: 3rem;
         margin-top: 2rem;
         margin-bottom: 2rem;
+        transition: transform 0.5s ease-in-out;
+        transform: scale(0) translateY(-1000px);
       }
 
       h2:nth-child(even) {
@@ -52,38 +55,26 @@
   </head>
   <body>
     <main>
-      <h1>a non-green score</h1>
+        <h1>this is fun</h1>
+        <h2>a little pop here</h2>
+        <h2>and a little pop there</h2>
+        <h2>here a pop</h2>
+        <h2>there a pop</h2>
+        <h2>everywhere a pop pop</h2>
+        <p>These animations trigger no CLS because the text nodes are already in the DOM on page load and the space for the elements is painted. However, if the text nodes are added to the DOM programatically after page load via JavaScript and then animated, CLS will be detected.</p>
+        <a href="">Read the full article</a>
     </main>
     <footer>
       <script is:inline>
-        const main = document.querySelector("main")
+        const els = document.querySelectorAll("h2");
 
-        const thingsToAdd = [
-          "a little shift here",
-          "and a little shift there",
-          "here a shift",
-          "there a shift",
-          "everywhere a shift shift",
-        ]
-
-        let i = -1;
-        const thing = setInterval(() => {
-          i++;
-          const h2 = document.createElement("h2");
-          h2.innerText = thingsToAdd[i];
-          main.appendChild(h2);
-
+        let i = 0;
+        const pop = setInterval(() => {
+          els[i].style.transform = "scale(1) translateY(0)";
           if(i === 4) {
-            clearInterval((thing));
-            const results = document.createElement("p");
-            results.innerText = `On a "navigation" Lighthouse test, this page scores 0.143 for CLS, bringing the overall Lighthouse performance score down to 95.`;
-            main.appendChild(results);
-            const link = document.createElement("a");
-            //todo
-            link.href = "";
-            link.innerText = `Read the full article`;
-            main.appendChild(link);
+            clearInterval(pop);
           }
+          i++;
         }, 500);
       </script>
     </footer>
